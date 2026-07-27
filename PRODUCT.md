@@ -161,5 +161,26 @@ Entrada `modular-roofing` en `.claude/launch.json`, puerto **3465**.
 
 ## Deploy
 
-No desplegado. Requiere aprobación explícita del usuario antes de subir a
-GitHub o Vercel.
+Desplegado el 2026-07-27 con aprobación explícita del usuario en chat.
+
+- **Repo:** https://github.com/AdrianRodriguez00/modular-roofing (público, rama `main`)
+- **Producción:** https://modular-roofing.vercel.app
+- **Proyecto Vercel:** `arodrod00s-projects/modular-roofing`
+- **Headers:** `vercel.json` aplica `X-Content-Type-Options`, `Referrer-Policy`,
+  `X-Frame-Options`, `Permissions-Policy`, y caché de 7 días para `/images/`.
+
+> ⚠️ **El auto-deploy desde GitHub NO está conectado.** `vercel link` falló con
+> *"You need to add a Login Connection to your GitHub account first"*: la cuenta
+> de Vercel `arodrod00` no tiene vinculada la cuenta de GitHub
+> `AdrianRodriguez00`. Mientras eso no se arregle, hacer push a GitHub **no**
+> despliega nada.
+>
+> **Para desplegar cambios hoy:**
+> ```bash
+> python build.py && git add -A && git commit -m "..." && git push
+> vercel deploy --prod --yes
+> ```
+>
+> **Para activar el auto-deploy:** en vercel.com → Settings → Git, conectar la
+> cuenta de GitHub, y luego enlazar el repo al proyecto. A partir de ahí, cada
+> push a `main` despliega solo (como en aluminum-luxury-decor).
