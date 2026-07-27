@@ -1,0 +1,288 @@
+  <!-- ============================ CABECERA ============================ -->
+  <section class="page-head">
+    <div class="shell page-head__in">
+      <nav class="crumbs" aria-label="Ruta">
+        <a href="index.html" data-en="Home">Inicio</a><span>/</span><span data-en="Pergolas">Pérgolas</span>
+      </nav>
+      <h1 data-reveal>
+        <span data-en="Design it in 3D.">Diséñala en 3D.</span>
+        <span class="mark" data-en="Then we build it.">Después la construimos.</span>
+      </h1>
+      <p class="lead" data-reveal style="--rv-d:120ms" data-en="Change the type, the finish, the size, and the louver angle — the model rebuilds in real time. What you see here is what shows up on your patio.">
+        Cambia el tipo, el acabado, el tamaño y el ángulo de las lamas — el modelo se reconstruye en tiempo real. Lo que ves aquí es lo que aparece en tu patio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ CONFIGURADOR 3D ============================ -->
+  <section style="padding-bottom:var(--bay)" id="configurador">
+    <div class="shell cfg">
+
+      <div class="canvas-wrap" data-scene="config" id="cfgCanvas"
+           data-width="16" data-depth="12" data-type="louver" data-finish="blanco"
+           style="aspect-ratio:16/11; min-height:340px" data-reveal="scale">
+        <canvas></canvas>
+        <div class="canvas-wrap__grid"></div>
+        <span class="canvas-wrap__badge" data-en="Live 3D configurator">Configurador 3D en vivo</span>
+        <span class="canvas-wrap__hint">
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M7 1.5v11M1.5 7h11" opacity=".5"/><circle cx="7" cy="7" r="5.6"/></svg>
+          <span data-en="Drag to rotate · scroll to zoom">Arrastra para girar · scroll para acercar</span>
+        </span>
+        <div class="canvas-wrap__load">
+          <svg class="spinner" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M16 3a13 13 0 0 1 13 13" stroke-linecap="round"/>
+          </svg>
+          <img class="canvas-fallback" src="images/proj-pergola-louvers.jpg" alt="Pérgola de lamas orientables" data-en-alt="Louvered pergola">
+        </div>
+      </div>
+
+      <form class="cfg__panel" data-config-for="cfgCanvas" data-reveal onsubmit="return false">
+
+        <fieldset class="cfg__grp">
+          <legend data-en="Roof type">Tipo de techo</legend>
+          <div class="opts opts--3">
+            <label class="opt">
+              <input type="radio" name="type" value="louver" data-cfg="type" checked>
+              <span class="opt__b">
+                <svg class="opt__ico" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9h22M3 14h22M3 19h22" opacity=".85"/><path d="M6 6v18M22 6v18" stroke-linecap="round"/></svg>
+                <span data-en="Louvered">Lamas</span>
+              </span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="type" value="panel" data-cfg="type">
+              <span class="opt__b">
+                <svg class="opt__ico" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="8" width="22" height="6" rx="1"/><path d="M6 14v10M22 14v10" stroke-linecap="round"/></svg>
+                <span data-en="Insulated">Insulado</span>
+              </span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="type" value="decorativa" data-cfg="type">
+              <span class="opt__b">
+                <svg class="opt__ico" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10h22M8 7v6M14 7v6M20 7v6" opacity=".85"/><path d="M6 10v14M22 10v14" stroke-linecap="round"/></svg>
+                <span data-en="Decorative">Decorativa</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="cfg__grp">
+          <legend data-en="Finish">Acabado</legend>
+          <div class="opts opts--4">
+            <label class="opt">
+              <input type="radio" name="finish" value="blanco" data-cfg="finish" checked>
+              <span class="opt__b"><span class="opt__sw" style="background:#E6E7E3"></span><span data-en="White">Blanco</span></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="finish" value="negro" data-cfg="finish">
+              <span class="opt__b"><span class="opt__sw" style="background:#1B1E22"></span><span data-en="Black">Negro</span></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="finish" value="bronce" data-cfg="finish">
+              <span class="opt__b"><span class="opt__sw" style="background:#53412F"></span><span data-en="Bronze">Bronce</span></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="finish" value="madera" data-cfg="finish">
+              <span class="opt__b"><span class="opt__sw" style="background:#8A5A31"></span><span data-en="Woodgrain">Madera</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="cfg__grp">
+          <legend data-en="Dimensions">Dimensiones</legend>
+          <div class="cfg__row">
+            <span class="field__l" style="margin:0" data-en="Width">Ancho</span>
+            <span class="cfg__val" data-cfg-out="width">16 ft</span>
+          </div>
+          <input type="range" min="10" max="28" step="2" value="16" data-cfg="width"
+                 aria-label="Ancho en pies" data-en-aria-label="Width in feet">
+          <div class="cfg__row" style="margin-top:1.4rem">
+            <span class="field__l" style="margin:0" data-en="Depth">Profundidad</span>
+            <span class="cfg__val" data-cfg-out="depth">12 ft</span>
+          </div>
+          <input type="range" min="8" max="24" step="2" value="12" data-cfg="depth"
+                 aria-label="Profundidad en pies" data-en-aria-label="Depth in feet">
+        </fieldset>
+
+        <fieldset class="cfg__grp" data-open-row>
+          <legend data-en="Louver opening">Apertura de lamas</legend>
+          <div class="cfg__row">
+            <span class="field__l" style="margin:0" data-en="Closed → open">Cerrado → abierto</span>
+          </div>
+          <input type="range" min="0" max="100" value="55" data-cfg="open"
+                 aria-label="Apertura de lamas" data-en-aria-label="Louver opening">
+        </fieldset>
+
+        <div class="cfg__foot">
+          <a class="btn" href="contacto.html">
+            <span data-en="Quote this design">Cotizar este diseño</span>
+            <svg class="btn__arrow" width="13" height="9" viewBox="0 0 13 9" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 4.5h11M7.5 1l3.5 3.5L7.5 8"/></svg>
+          </a>
+          <button type="button" class="btn btn--ghost" data-cfg-reset data-en="Reset view">Reiniciar vista</button>
+          <p class="cfg__note" data-en="Real-time model for reference. Final dimensions, structure, and anchoring are confirmed during the on-site measurement.">
+            Modelo en tiempo real, de referencia. Las dimensiones finales, la estructura y el anclaje se confirman durante la medición en sitio.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================ TIPOS ============================ -->
+  <section class="bay" id="tipos" style="border-top:1px solid var(--line)">
+    <div class="shell">
+      <div class="sec-head">
+        <div>
+          <p class="tag" data-reveal data-en="The families">Las familias</p>
+          <h2 class="sec-head__title" data-reveal style="--rv-d:80ms">
+            <span data-en="Shade is not">La sombra no es</span><br>
+            <span class="outline" data-en="one single thing.">una sola cosa.</span>
+          </h2>
+        </div>
+        <p class="lead" data-reveal style="--rv-d:160ms" data-en="What you need depends on how you'll use the space: sun control, real heat blocking, or pure architecture.">
+          Lo que necesitas depende de cómo vas a usar el espacio: control del sol, bloqueo real del calor, o pura arquitectura.
+        </p>
+      </div>
+
+      <div class="grid grid--2" data-stagger="110">
+        <article class="plate svc" data-reveal>
+          <span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span>
+          <span class="idx">01</span>
+          <h3 data-en="Bioclimatic (louvered)">Bioclimática (lamas)</h3>
+          <p class="dim" data-en="Aluminum louvers that rotate with a remote. Open them for breeze, angle them for shade, close them when the rain starts. The most versatile option — and the one everyone wants once they've seen it work.">
+            Lamas de aluminio que giran con control remoto. Ábrelas para que corra el aire, inclínalas para sombra, ciérralas cuando empieza la lluvia. La opción más versátil — y la que todos quieren una vez que la ven funcionar.
+          </p>
+          <ul class="svc__l" role="list">
+            <li data-en="Motorized rotation">Rotación motorizada</li>
+            <li data-en="Closes against rain">Cierra contra la lluvia</li>
+            <li data-en="Integrated LED option">Opción de LED integrado</li>
+          </ul>
+        </article>
+
+        <article class="plate svc" data-reveal>
+          <span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span>
+          <span class="idx">02</span>
+          <h3 data-en="Insulated panel">Panel insulado</h3>
+          <p class="dim" data-en="A solid roof with an insulating core. It doesn't just block the sun — it blocks the heat coming through. If you want to actually use the patio at 2pm in August, this is the answer.">
+            Un techo sólido con núcleo aislante. No solo bloquea el sol — bloquea el calor que lo atraviesa. Si quieres usar de verdad el patio a las 2pm en agosto, esta es la respuesta.
+          </p>
+          <ul class="svc__l" role="list">
+            <li data-en="Real thermal insulation">Aislamiento térmico real</li>
+            <li data-en="100% waterproof">100% impermeable</li>
+            <li data-en="Ideal over outdoor kitchens">Ideal sobre cocinas exteriores</li>
+          </ul>
+        </article>
+
+        <article class="plate svc" data-reveal>
+          <span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span>
+          <span class="idx">03</span>
+          <h3 data-en="Decorative aluminum">Aluminio decorativo</h3>
+          <p class="dim" data-en="Open rafters, no moving parts, nothing to maintain. It defines the space and filters the light without closing it off. Available in woodgrain finish that holds up to the sun in a way real wood doesn't.">
+            Rafters abiertos, sin partes móviles, nada que mantener. Define el espacio y filtra la luz sin cerrarlo. Disponible en acabado madera que aguanta el sol como la madera real no lo hace.
+          </p>
+          <ul class="svc__l" role="list">
+            <li data-en="Zero maintenance">Cero mantenimiento</li>
+            <li data-en="Woodgrain finish available">Acabado madera disponible</li>
+            <li data-en="Most affordable">La más accesible</li>
+          </ul>
+        </article>
+
+        <article class="plate svc" data-reveal>
+          <span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span>
+          <span class="idx">04</span>
+          <h3 data-en="Outdoor kitchens">Cocinas exteriores</h3>
+          <p class="dim" data-en="A pergola is the roof; the kitchen is what makes you live under it. We build the structure and the counter together so the plumbing, the gas, and the electrical are planned from day one — not patched in later.">
+            La pérgola es el techo; la cocina es lo que hace que vivas debajo. Construimos la estructura y el mesón juntos para que la plomería, el gas y la electricidad se planeen desde el día uno — no se parchen después.
+          </p>
+          <ul class="svc__l" role="list">
+            <li data-en="Structure + counter together">Estructura + mesón juntos</li>
+            <li data-en="Utilities planned upfront">Instalaciones planeadas antes</li>
+            <li data-en="Weather-rated materials">Materiales para intemperie</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ESPECIFICACIONES ============================ -->
+  <section class="bay" style="border-block:1px solid var(--line); background:linear-gradient(180deg,var(--void),var(--graphite))">
+    <div class="shell duo duo--flip">
+      <figure class="duo__img" data-reveal="scale">
+        <img src="images/proj-pergola-lateral.jpg" alt="Detalle estructural de pérgola de aluminio" data-en-alt="Structural detail of aluminum pergola" loading="lazy">
+      </figure>
+      <div data-reveal>
+        <p class="tag tag--draft" data-en="Specifications">Especificaciones</p>
+        <h2 style="margin-top:1.4rem" data-en="Built for this climate.">Hecha para este clima.</h2>
+        <p class="lead" style="margin-top:1.4rem" data-en="Everything we install is aluminum — it doesn't rot, doesn't rust, and doesn't get eaten by termites. In South Florida that's not a preference, it's the only sane choice.">
+          Todo lo que instalamos es aluminio — no se pudre, no se oxida y no se lo comen las termitas. En el sur de la Florida eso no es una preferencia, es la única opción sensata.
+        </p>
+        <div class="spec-wrap" style="margin-top:2rem">
+          <table class="spec">
+            <tbody>
+              <tr><th data-en="Material">Material</th><td data-en="Structural extruded aluminum">Aluminio extruido estructural</td></tr>
+              <tr><th data-en="Finish">Acabado</th><td data-en="Powder coat — white, black, bronze, or woodgrain">Powder coat — blanco, negro, bronce o madera</td></tr>
+              <tr><th data-en="Wind rating">Viento</th><td data-en="Engineered for South Florida wind loads">Calculada para cargas de viento del sur de la Florida</td></tr>
+              <tr><th data-en="Anchoring">Anclaje</th><td data-en="To slab, footing, or existing structure per site conditions">A losa, zapata o estructura existente según el sitio</td></tr>
+              <tr><th data-en="Permits">Permisos</th><td data-en="Pulled by us when the municipality requires them">Los sacamos nosotros cuando el municipio los exige</td></tr>
+              <tr><th data-en="Add-ons">Adicionales</th><td data-en="LED lighting, fans, screens, motorized shades">Iluminación LED, ventiladores, mallas, cortinas motorizadas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ GALERÍA ============================ -->
+  <section class="bay">
+    <div class="shell">
+      <div class="sec-head">
+        <div>
+          <p class="tag" data-reveal data-en="Installed">Instaladas</p>
+          <h2 class="sec-head__title" data-reveal style="--rv-d:80ms" data-en="How they look for real.">Cómo se ven de verdad.</h2>
+        </div>
+        <div data-reveal style="--rv-d:160ms">
+          <a class="link" href="proyectos.html"><span data-en="See all projects">Ver todos los proyectos</span> →</a>
+        </div>
+      </div>
+      <div class="mosaic" data-stagger="90">
+        <figure class="mosaic__i mosaic__i--tall" data-reveal>
+          <img src="images/proj-pergola-bioclimatica.jpg" alt="Pérgola bioclimática" data-en-alt="Bioclimatic pergola" loading="lazy">
+          <figcaption><span class="idx">01</span><span data-en="Bioclimatic">Bioclimática</span></figcaption>
+        </figure>
+        <figure class="mosaic__i" data-reveal>
+          <img src="images/proj-pergola-patio.jpg" alt="Pérgola sobre patio" data-en-alt="Pergola over patio" loading="lazy">
+          <figcaption><span class="idx">02</span><span data-en="Insulated panel">Panel insulado</span></figcaption>
+        </figure>
+        <figure class="mosaic__i" data-reveal>
+          <img src="images/proj-pergola-jardin.jpg" alt="Pérgola en jardín" data-en-alt="Garden pergola" loading="lazy">
+          <figcaption><span class="idx">03</span><span data-en="Decorative">Decorativa</span></figcaption>
+        </figure>
+        <figure class="mosaic__i mosaic__i--wide" data-reveal>
+          <img src="images/proj-lounge-noche.jpg" alt="Pérgola con cocina exterior de noche" data-en-alt="Pergola with outdoor kitchen at night" loading="lazy">
+          <figcaption><span class="idx">04</span><span data-en="Pergola + outdoor kitchen">Pérgola + cocina exterior</span></figcaption>
+        </figure>
+      </div>
+      <p class="note" data-reveal data-en="Reference images. We're loading photos of our own completed projects.">
+        Imágenes de referencia. Estamos cargando fotos de nuestros propios proyectos terminados.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ CTA ============================ -->
+  <section class="cta">
+    <div class="shell cta__in">
+      <p class="tag" data-reveal data-en="Next step">Siguiente paso</p>
+      <h2 class="cta__h" data-reveal style="--rv-d:80ms">
+        <span class="rise"><span data-en="You designed it.">Ya la diseñaste.</span></span>
+        <span class="rise"><span class="mark" data-en="Now let's price it.">Ahora pongámosle precio.</span></span>
+      </h2>
+      <p class="lead" data-reveal style="--rv-d:180ms; margin-inline:auto" data-en="Send us your configuration and we'll come measure. Free estimate, financing available.">
+        Mándanos tu configuración y vamos a medir. Estimado gratis, financiamiento disponible.
+      </p>
+      <div class="cta__btns" data-reveal style="--rv-d:260ms">
+        <a class="btn" href="contacto.html">
+          <span data-en="Request estimate">Solicitar estimado</span>
+          <svg class="btn__arrow" width="13" height="9" viewBox="0 0 13 9" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 4.5h11M7.5 1l3.5 3.5L7.5 8"/></svg>
+        </a>
+        <a class="btn btn--wa" href="https://wa.me/17867820216" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>

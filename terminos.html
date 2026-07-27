@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Términos de Uso | Modular Roofing y Pérgolas</title>
+<meta name="description" content="Términos de uso del sitio: alcance de los estimados y modelos 3D, licencia, reclamos de seguro, bono de referidos, financiamiento y accesibilidad.">
+<meta name="theme-color" content="#0D1116">
+<link rel="canonical" href="https://modular-roofing.com/terminos.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Términos de Uso | Modular Roofing y Pérgolas">
+<meta property="og:description" content="Términos de uso del sitio: alcance de los estimados y modelos 3D, licencia, reclamos de seguro, bono de referidos, financiamiento y accesibilidad.">
+<meta property="og:image" content="images/proj-pergola-bioclimatica.jpg">
+<meta property="og:locale" content="es_US">
+<meta property="og:locale:alternate" content="en_US">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@200;300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D1116'/%3E%3Cpath d='M4 17L16 7l12 10' stroke='%23C9682F' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M8 20h16M8 24h16' stroke='%234F94C4' stroke-width='1.6'/%3E%3C/svg%3E">
+
+<script type="importmap">
+{ "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+} }
+</script>
+
+</head>
+<body>
+
+<a class="skip" href="#main" data-en="Skip to content">Saltar al contenido</a>
+
+<!-- Cortina de transición entre páginas -->
+<div class="curtain" aria-hidden="true">
+  <div class="curtain__p"></div><div class="curtain__p"></div><div class="curtain__p"></div>
+  <div class="curtain__p"></div><div class="curtain__p"></div>
+  <div class="curtain__mark">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17L16 7l12 10" stroke-linejoin="round"/></svg>
+  </div>
+</div>
+
+<!-- ============================ HEADER ============================ -->
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="index.html" aria-label="Modular Roofing y Pérgolas — inicio">
+      <svg class="brand__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 16.5L16 6l13 10.5" stroke-linejoin="round"/>
+        <path d="M7 20.5h18M7 25h18" stroke-width="1.4" opacity=".55"/>
+      </svg>
+      <span class="brand__txt">
+        <span class="brand__name">MODULAR</span>
+        <span class="brand__sub">Roofing &amp; Pérgolas</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <a class="nav__a" href="index.html" data-en="Home">Inicio</a>
+      <a class="nav__a" href="techos.html" data-en="Roofing">Techos</a>
+      <a class="nav__a" href="pergolas.html" data-en="Pergolas">Pérgolas</a>
+      <a class="nav__a" href="proyectos.html" data-en="Projects">Proyectos</a>
+      <a class="nav__a" href="nosotros.html" data-en="About">Nosotros</a>
+      <a class="nav__a" href="contacto.html" data-en="Contact">Contacto</a>
+    </nav>
+
+    <div class="hdr__side">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button class="lang__b" data-lang="es" aria-pressed="true">ES</button>
+        <button class="lang__b" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn" href="contacto.html">
+        <span data-en="Free estimate">Estimado gratis</span>
+        <svg class="btn__arrow" width="13" height="9" viewBox="0 0 13 9" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 4.5h11M7.5 1l3.5 3.5L7.5 8"/></svg>
+      </a>
+      <button class="burger" aria-expanded="false" aria-controls="sheet" aria-label="Menú" data-en-aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<div class="sheet" id="sheet" data-open="false">
+  <nav class="sheet__nav" aria-label="Móvil">
+    <a class="sheet__a" href="index.html"><span class="idx">01</span><span data-en="Home">Inicio</span></a>
+    <a class="sheet__a" href="techos.html"><span class="idx">02</span><span data-en="Roofing">Techos</span></a>
+    <a class="sheet__a" href="pergolas.html"><span class="idx">03</span><span data-en="Pergolas">Pérgolas</span></a>
+    <a class="sheet__a" href="proyectos.html"><span class="idx">04</span><span data-en="Projects">Proyectos</span></a>
+    <a class="sheet__a" href="nosotros.html"><span class="idx">05</span><span data-en="About">Nosotros</span></a>
+    <a class="sheet__a" href="contacto.html"><span class="idx">06</span><span data-en="Contact">Contacto</span></a>
+  </nav>
+  <div class="sheet__foot">
+    <a class="btn btn--wa" href="https://wa.me/17867820216" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn--ghost" href="tel:+17867820216">786 782 0216</a>
+    <div class="social" style="width:100%; margin-top:.6rem">
+      <a class="social__a" href="https://www.instagram.com/modularroofing/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="social__a" href="https://www.facebook.com/1053084341213840" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.9c0-.8.2-1.2 1.4-1.2h1.5V2.8c-.3 0-1.2-.1-2.3-.1-2.4 0-4 1.4-4 4.1v1.7H8v3.1h2.6V21H14v-9.4h2.5l.4-3.1H14z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="shell page-head__in">
+      <nav class="crumbs" aria-label="Ruta">
+        <a href="index.html" data-en="Home">Inicio</a><span>/</span><span data-en="Terms of Use">Términos de Uso</span>
+      </nav>
+      <h1 data-reveal data-en="Terms of Use">Términos de Uso</h1>
+      <p class="lead" data-reveal style="--rv-d:120ms" data-en="The rules for using this website, and what our estimates and 3D models do — and don't — commit us to.">
+        Las reglas para usar este sitio web, y a qué nos comprometen — y a qué no — nuestros estimados y modelos 3D.
+      </p>
+    </div>
+  </section>
+
+  <section style="padding-bottom:var(--bay)">
+    <div class="shell legal">
+
+      <nav class="legal__toc" aria-label="Índice" data-en-aria-label="Table of contents" data-reveal>
+        <ol>
+          <li><a href="#t1" data-en="Acceptance">Aceptación</a></li>
+          <li><a href="#t2" data-en="Not a contract">No es un contrato</a></li>
+          <li><a href="#t3" data-en="3D models">Modelos 3D</a></li>
+          <li><a href="#t4" data-en="Photography">Fotografías</a></li>
+          <li><a href="#t5" data-en="Licensing &amp; scope">Licencia y alcance</a></li>
+          <li><a href="#t6" data-en="Insurance claims">Reclamos de seguro</a></li>
+          <li><a href="#t7" data-en="Referral bonus">Bono de referidos</a></li>
+          <li><a href="#t8" data-en="Financing">Financiamiento</a></li>
+          <li><a href="#t9" data-en="Intellectual property">Propiedad intelectual</a></li>
+          <li><a href="#t10" data-en="Warranties &amp; liability">Garantías y responsabilidad</a></li>
+          <li><a href="#t11" data-en="Accessibility">Accesibilidad</a></li>
+          <li><a href="#t12" data-en="Governing law">Ley aplicable</a></li>
+        </ol>
+      </nav>
+
+      <div class="prose" data-reveal>
+        <div class="legal__meta">
+          <span data-en="Last updated: July 27, 2026">Última actualización: 27 de julio de 2026</span>
+          <span data-en="Applies to: modular-roofing.com">Aplica a: modular-roofing.com</span>
+        </div>
+
+        <h2 id="t1" data-en="1. Acceptance of these terms">1. Aceptación de estos términos</h2>
+        <p data-en="By using this website you accept these terms. If you don't agree with them, please don't use the site. These terms apply to the website only — any work we perform for you is governed by the written proposal and contract you sign, which prevails over anything on this page.">
+          Al usar este sitio web aceptas estos términos. Si no estás de acuerdo con ellos, no uses el sitio. Estos términos aplican únicamente al sitio web — cualquier trabajo que ejecutemos para ti se rige por la propuesta y el contrato escritos que firmes, que prevalecen sobre lo dicho en esta página.
+        </p>
+
+        <h2 id="t2" data-en="2. This website is not a contract or a quote">2. Este sitio no es un contrato ni una cotización</h2>
+        <div class="callout">
+          <p data-en="Nothing on this website is a binding offer, a price quote, or a guarantee of availability. Prices, timelines, materials, and scope are only binding once they appear in a written proposal signed by both parties.">
+            Nada en este sitio web constituye una oferta vinculante, una cotización de precio ni una garantía de disponibilidad. Los precios, plazos, materiales y alcance solo son vinculantes cuando aparecen en una propuesta escrita firmada por ambas partes.
+          </p>
+        </div>
+        <p data-en="Submitting a form does not create a contractual relationship. It's a request for us to contact you.">
+          Enviar un formulario no crea una relación contractual. Es una solicitud para que te contactemos.
+        </p>
+
+        <h2 id="t3" data-en="3. About the 3D models and configurator">3. Sobre los modelos 3D y el configurador</h2>
+        <p data-en="The 3D pergola models on this site are illustrative representations generated in your browser. They are a visualization tool, not engineering drawings.">
+          Los modelos 3D de pérgolas en este sitio son representaciones ilustrativas generadas en tu navegador. Son una herramienta de visualización, no planos de ingeniería.
+        </p>
+        <ul>
+          <li data-en="Dimensions shown are approximate and are confirmed only during on-site measurement.">
+            Las dimensiones mostradas son aproximadas y se confirman únicamente durante la medición en sitio.
+          </li>
+          <li data-en="Colors on your screen may differ from the actual powder-coat finish. Ask to see physical samples at the showroom before deciding.">
+            Los colores en tu pantalla pueden diferir del acabado powder-coat real. Pide ver muestras físicas en el showroom antes de decidir.
+          </li>
+          <li data-en="Final structure, post placement, anchoring, and engineering depend on site conditions, soil, existing structure, and applicable building code — and may differ from what the configurator shows.">
+            La estructura final, la ubicación de postes, el anclaje y la ingeniería dependen de las condiciones del sitio, el suelo, la estructura existente y el código de construcción aplicable — y pueden diferir de lo que muestra el configurador.
+          </li>
+          <li data-en="Some configurations shown may not be permittable in every municipality.">
+            Algunas configuraciones mostradas pueden no ser permisibles en todos los municipios.
+          </li>
+        </ul>
+
+        <h2 id="t4" data-en="4. Photography on this site">4. Fotografías en este sitio</h2>
+        <div class="callout">
+          <p data-en="Some images currently shown in the project galleries are reference photographs illustrating the types of work we perform. They are labeled as such throughout the site and are being replaced with photographs of our own completed projects.">
+            Algunas imágenes que se muestran actualmente en las galerías de proyectos son fotografías de referencia que ilustran los tipos de trabajo que realizamos. Están señaladas como tales en todo el sitio y están siendo reemplazadas por fotografías de nuestros propios proyectos terminados.
+          </p>
+          <p data-en="City names shown alongside images illustrate our service area and do not represent a claim that a specific pictured project was performed at that location.">
+            Los nombres de ciudades mostrados junto a las imágenes ilustran nuestra zona de servicio y no representan una afirmación de que un proyecto específico fotografiado se haya ejecutado en esa ubicación.
+          </p>
+        </div>
+
+        <h2 id="t5" data-en="5. Licensing and scope of work">5. Licencia y alcance del trabajo</h2>
+        <p data-en="We perform work as a licensed and insured contractor in the State of Florida, in compliance with applicable building codes including Miami-Dade County requirements. We will provide our license number and certificate of insurance on request, and it will appear on any written proposal.">
+          Realizamos el trabajo como contratista licenciado y asegurado en el Estado de Florida, en cumplimiento de los códigos de construcción aplicables, incluidos los requisitos del Condado de Miami-Dade. Proporcionaremos nuestro número de licencia y certificado de seguro a solicitud, y aparecerán en cualquier propuesta escrita.
+        </p>
+        <p data-en="We serve Miami-Dade, Broward, and Palm Beach counties. Availability in a given city is subject to scheduling and permitting conditions.">
+          Atendemos los condados de Miami-Dade, Broward y Palm Beach. La disponibilidad en una ciudad determinada está sujeta a condiciones de agenda y permisos.
+        </p>
+
+        <h2 id="t6" data-en="6. Insurance claims">6. Reclamos de seguro</h2>
+        <div class="callout">
+          <p data-en="We are licensed contractors, not public adjusters, attorneys, or insurance agents. We inspect your roof and document damage with photographs and a written report. We do not negotiate with insurers on your behalf, we do not adjust claims, and nothing we provide is legal advice or a guarantee that your claim will be approved or paid.">
+            Somos contratistas licenciados, no public adjusters, abogados ni agentes de seguros. Inspeccionamos tu techo y documentamos el daño con fotografías y un reporte escrito. No negociamos con las aseguradoras en tu nombre, no ajustamos reclamos, y nada de lo que entregamos constituye asesoría legal ni garantía de que tu reclamo será aprobado o pagado.
+          </p>
+        </div>
+
+        <h2 id="t7" data-en="7. Referral bonus">7. Bono de referidos</h2>
+        <p data-en="Our $100 referral bonus applies when a person you refer signs a contract with us and the roofing work is completed and paid in full. Conditions:">
+          Nuestro bono de $100 por referido aplica cuando una persona que refieres firma contrato con nosotros y el trabajo de techo se completa y se paga en su totalidad. Condiciones:
+        </p>
+        <ul>
+          <li data-en="The person referred must mention your name when they first contact us.">
+            La persona referida debe mencionar tu nombre en su primer contacto con nosotros.
+          </li>
+          <li data-en="The bonus is paid after the referred project is completed and paid.">
+            El bono se paga después de que el proyecto referido esté terminado y pagado.
+          </li>
+          <li data-en="Self-referrals and referrals of people who had already contacted us do not qualify.">
+            No califican los auto-referidos ni los referidos de personas que ya nos habían contactado.
+          </li>
+          <li data-en="We may modify or end this program at any time; changes do not affect referrals already qualified.">
+            Podemos modificar o terminar este programa en cualquier momento; los cambios no afectan a los referidos ya calificados.
+          </li>
+        </ul>
+
+        <h2 id="t8" data-en="8. Financing">8. Financiamiento</h2>
+        <p data-en="Financing is offered through independent third-party lenders. Approval, interest rates, and terms are determined solely by the lender based on your credit, not by us. We do not lend money, we are not a party to your loan agreement, and mentioning financing on this site is not an offer or pre-approval of credit.">
+          El financiamiento se ofrece a través de prestamistas externos independientes. La aprobación, las tasas de interés y los términos los determina exclusivamente el prestamista según tu crédito, no nosotros. No prestamos dinero, no somos parte de tu contrato de préstamo, y mencionar financiamiento en este sitio no constituye una oferta ni una preaprobación de crédito.
+        </p>
+
+        <h2 id="t9" data-en="9. Intellectual property">9. Propiedad intelectual</h2>
+        <p data-en="The design, text, code, 3D models, and graphics on this site are owned by Modular Roofing &amp; Pergolas or used with permission. You may view and print pages for your personal, non-commercial use. You may not copy, republish, or use them commercially without written permission.">
+          El diseño, los textos, el código, los modelos 3D y los gráficos de este sitio son propiedad de Modular Roofing y Pérgolas o se usan con permiso. Puedes ver e imprimir páginas para tu uso personal y no comercial. No puedes copiarlos, republicarlos ni usarlos comercialmente sin permiso escrito.
+        </p>
+
+        <h2 id="t10" data-en="10. Warranties and limitation of liability">10. Garantías y limitación de responsabilidad</h2>
+        <p data-en="This website is provided &quot;as is&quot;. We work to keep the information accurate and current, but we make no warranty that it is complete, error-free, or continuously available.">
+          Este sitio web se proporciona "tal cual". Trabajamos para mantener la información precisa y actualizada, pero no garantizamos que sea completa, esté libre de errores o esté disponible de forma continua.
+        </p>
+        <p data-en="To the fullest extent permitted by Florida law, we are not liable for indirect or consequential damages arising from your use of this website. This limitation does not apply to the workmanship warranties stated in a signed contract, and it does not limit any rights you have under Florida's construction statutes.">
+          En la máxima medida permitida por la ley de Florida, no somos responsables por daños indirectos o consecuenciales derivados de tu uso de este sitio web. Esta limitación no aplica a las garantías de mano de obra establecidas en un contrato firmado, ni limita los derechos que te correspondan bajo los estatutos de construcción de Florida.
+        </p>
+        <p data-en="Manufacturer warranties on materials are provided by the manufacturer under their own terms, and are passed through to you.">
+          Las garantías de fábrica sobre los materiales las otorga el fabricante bajo sus propios términos y se te trasladan a ti.
+        </p>
+
+        <h2 id="t11" data-en="11. Accessibility">11. Accesibilidad</h2>
+        <p data-en="We built this site to be usable with a keyboard and with screen readers, to respect reduced-motion settings, and to work without JavaScript for navigation and reading. If you hit a barrier using it, tell us on WhatsApp at (786) 782-0216 and we'll fix it — and we'll take your request by phone or in person in the meantime.">
+          Construimos este sitio para que se pueda usar con teclado y con lectores de pantalla, para que respete la configuración de movimiento reducido y para que funcione sin JavaScript en la navegación y lectura. Si encuentras una barrera al usarlo, dínoslo por WhatsApp al (786) 782-0216 y lo corregimos — y mientras tanto atendemos tu solicitud por teléfono o en persona.
+        </p>
+
+        <h2 id="t12" data-en="12. Governing law">12. Ley aplicable</h2>
+        <p data-en="These terms are governed by the laws of the State of Florida. Any dispute relating to this website will be resolved in the state or federal courts located in Miami-Dade County, Florida.">
+          Estos términos se rigen por las leyes del Estado de Florida. Cualquier disputa relacionada con este sitio web se resolverá en los tribunales estatales o federales ubicados en el Condado de Miami-Dade, Florida.
+        </p>
+        <p data-en="If any provision of these terms is found unenforceable, the rest remain in effect.">
+          Si alguna disposición de estos términos resulta inaplicable, el resto permanece vigente.
+        </p>
+
+        <h2 data-en="Questions">Preguntas</h2>
+        <p data-en="WhatsApp or call">WhatsApp o llama al</p>
+        <ul>
+          <li><a href="tel:+17867820216">(786) 782-0216</a></li>
+          <li>19591 NE 10th Avenue, Building 3 — Bay B, North Miami Beach, FL 33179</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__top">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 16.5L16 6l13 10.5" stroke-linejoin="round"/>
+            <path d="M7 20.5h18M7 25h18" stroke-width="1.4" opacity=".55"/>
+          </svg>
+          <span class="brand__txt">
+            <span class="brand__name">MODULAR</span>
+            <span class="brand__sub">Roofing &amp; Pérgolas</span>
+          </span>
+        </a>
+        <p class="dim" style="margin-top:1.6rem; max-width:34ch" data-en="Roofing and custom pergolas across South Florida. Licensed, insured, and hurricane-rated.">
+          Techos y pérgolas a medida en el sur de la Florida. Licenciados, asegurados y anti-huracán.
+        </p>
+        <div class="social" style="margin-top:1.8rem">
+          <a class="social__a" href="https://www.instagram.com/modularroofing/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social__a" href="https://www.facebook.com/1053084341213840" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.9c0-.8.2-1.2 1.4-1.2h1.5V2.8c-.3 0-1.2-.1-2.3-.1-2.4 0-4 1.4-4 4.1v1.7H8v3.1h2.6V21H14v-9.4h2.5l.4-3.1H14z"/></svg>
+          </a>
+          <a class="social__a social__a--wa" href="https://wa.me/17867820216" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-6.9 12l-1 3.9L4.1 15A8 8 0 1 0 8 0zm4.6 11.3c-.2.6-1.1 1-1.5 1-.4.1-.9.1-1.5-.1a12 12 0 0 1-4.8-4.3C4.2 7 4 6.2 4 5.6c0-.6.3-1 .5-1.2.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .5.4l.6 1.5c.1.1.1.3 0 .4l-.2.4-.3.3c-.1.1-.2.2-.1.4.2.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2 0 .3 0 .4-.1l.7-.8c.1-.2.3-.1.4-.1l1.5.7c.2.1.3.2.4.3v.9z"/></svg>
+          </a>
+          <a class="social__a" href="tel:+17867820216" aria-label="Teléfono" data-en-aria-label="Phone">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3.5C2 2.7 2.7 2 3.5 2h1.7c.6 0 1.1.4 1.3 1l.6 2.2c.1.5 0 1-.4 1.3l-1 .8a9 9 0 0 0 3.9 3.9l.8-1c.3-.4.8-.5 1.3-.4l2.2.6c.6.2 1 .7 1 1.3v1.7c0 .8-.7 1.5-1.5 1.5A12.5 12.5 0 0 1 2 3.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="ftr__h" data-en="Services">Servicios</h3>
+        <div class="ftr__l">
+          <a href="techos.html" data-en="Roof replacement">Reemplazo de techo</a>
+          <a href="techos.html#inspeccion" data-en="Inspection &amp; repair">Inspección y reparación</a>
+          <a href="pergolas.html" data-en="Custom pergolas">Pérgolas a medida</a>
+          <a href="pergolas.html#tipos" data-en="Outdoor kitchens">Cocinas exteriores</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="ftr__h" data-en="Company">Empresa</h3>
+        <div class="ftr__l">
+          <a href="nosotros.html" data-en="About us">Nosotros</a>
+          <a href="proyectos.html" data-en="Projects">Proyectos</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="contacto.html" data-en="Contact">Contacto</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="ftr__h" data-en="Get in touch">Contacto</h3>
+        <div class="ftr__l">
+          <a href="tel:+17867820216">(786) 782-0216</a>
+          <a href="https://wa.me/17867820216" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/modularroofing/" target="_blank" rel="noopener">@modularroofing</a>
+          <span>19591 NE 10th Ave, Bldg 3 — Bay B<br>North Miami Beach, FL 33179</span>
+          <span data-en="Mon – Fri · 9AM – 5PM">Lun – Vie · 9AM – 5PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ftr__bot">
+      <span>© <span id="yr">2026</span> Modular Roofing &amp; Pérgolas</span>
+      <nav class="ftr__legal" aria-label="Legal">
+        <a href="privacidad.html" data-en="Privacy Policy">Política de Privacidad</a>
+        <a href="terminos.html" data-en="Terms of Use">Términos de Uso</a>
+        <a href="terminos.html#t11" data-en="Accessibility">Accesibilidad</a>
+      </nav>
+      <span data-en="Licensed &amp; insured · Miami-Dade code compliant">Licenciados y asegurados · Cumple código Miami-Dade</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra de acción móvil -->
+<nav class="dock" data-show="false" aria-label="Acciones rápidas">
+  <a class="dock__b" href="tel:+17867820216">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3.5C2 2.7 2.7 2 3.5 2h1.7c.6 0 1.1.4 1.3 1l.6 2.2c.1.5 0 1-.4 1.3l-1 .8a9 9 0 0 0 3.9 3.9l.8-1c.3-.4.8-.5 1.3-.4l2.2.6c.6.2 1 .7 1 1.3v1.7c0 .8-.7 1.5-1.5 1.5A12.5 12.5 0 0 1 2 3.5z"/></svg>
+    <span data-en="Call">Llamar</span>
+  </a>
+  <a class="dock__b dock__b--wa" href="https://wa.me/17867820216" target="_blank" rel="noopener">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-6.9 12l-1 3.9L4.1 15A8 8 0 1 0 8 0zm4.6 11.3c-.2.6-1.1 1-1.5 1-.4.1-.9.1-1.5-.1a12 12 0 0 1-4.8-4.3C4.2 7 4 6.2 4 5.6c0-.6.3-1 .5-1.2.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .5.4l.6 1.5c.1.1.1.3 0 .4l-.2.4-.3.3c-.1.1-.2.2-.1.4.2.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2 0 .3 0 .4-.1l.7-.8c.1-.2.3-.1.4-.1l1.5.7c.2.1.3.2.4.3v.9z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</nav>
+
+<a class="wa-fab" href="https://wa.me/17867820216" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-en-aria-label="Message us on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-6.9 12l-1 3.9L4.1 15A8 8 0 1 0 8 0zm4.6 11.3c-.2.6-1.1 1-1.5 1-.4.1-.9.1-1.5-.1a12 12 0 0 1-4.8-4.3C4.2 7 4 6.2 4 5.6c0-.6.3-1 .5-1.2.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .5.4l.6 1.5c.1.1.1.3 0 .4l-.2.4-.3.3c-.1.1-.2.2-.1.4.2.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2 0 .3 0 .4-.1l.7-.8c.1-.2.3-.1.4-.1l1.5.7c.2.1.3.2.4.3v.9z"/></svg>
+</a>
+
+<!-- Aviso de cookies / recursos externos -->
+<aside class="cookie" data-cookie data-show="false" role="region" aria-label="Aviso de privacidad" data-en-aria-label="Privacy notice">
+  <p class="cookie__t" data-en="Privacy notice">Aviso de privacidad</p>
+  <p data-en="This site sets no advertising or analytics cookies. It stores only your language preference, and loads fonts and the 3D library from external providers, which receive your IP address. See our <a href=&quot;privacidad.html&quot;>Privacy Policy</a>.">
+    Este sitio no usa cookies de publicidad ni de analítica. Solo guarda tu preferencia de idioma, y carga las tipografías y la librería 3D desde proveedores externos, que reciben tu dirección IP. Consulta nuestra <a href="privacidad.html">Política de Privacidad</a>.
+  </p>
+  <div class="cookie__btns">
+    <button class="btn" data-cookie-ok data-en="Got it">Entendido</button>
+    <a class="btn btn--ghost" href="privacidad.html" data-en="Read policy">Leer política</a>
+  </div>
+</aside>
+
+<script src="assets/site.js"></script>
+<script type="module" src="assets/three-scenes.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

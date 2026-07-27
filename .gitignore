@@ -1,0 +1,23 @@
+# Vercel
+.vercel
+
+# Sistema operativo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+$RECYCLE.BIN/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python (build.py)
+__pycache__/
+*.py[cod]
+
+# Logs
+*.log
+npm-debug.log*

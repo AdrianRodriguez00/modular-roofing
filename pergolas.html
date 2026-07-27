@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pérgolas a Medida en Miami | Configurador 3D | Modular Roofing</title>
+<meta name="description" content="Diseña tu pérgola en 3D en tiempo real: bioclimática de lamas, panel insulado o decorativa. Aluminio estructural para el clima del sur de la Florida.">
+<meta name="theme-color" content="#0D1116">
+<link rel="canonical" href="https://modular-roofing.com/pergolas.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pérgolas a Medida en Miami | Configurador 3D | Modular Roofing">
+<meta property="og:description" content="Diseña tu pérgola en 3D en tiempo real: bioclimática de lamas, panel insulado o decorativa. Aluminio estructural para el clima del sur de la Florida.">
+<meta property="og:image" content="images/proj-pergola-bioclimatica.jpg">
+<meta property="og:locale" content="es_US">
+<meta property="og:locale:alternate" content="en_US">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@200;300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/pages.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D1116'/%3E%3Cpath d='M4 17L16 7l12 10' stroke='%23C9682F' stroke-width='2.4' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M8 20h16M8 24h16' stroke='%234F94C4' stroke-width='1.6'/%3E%3C/svg%3E">
+
+<script type="importmap">
+{ "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+} }
+</script>
+
+</head>
+<body>
+
+<a class="skip" href="#main" data-en="Skip to content">Saltar al contenido</a>
+
+<!-- Cortina de transición entre páginas -->
+<div class="curtain" aria-hidden="true">
+  <div class="curtain__p"></div><div class="curtain__p"></div><div class="curtain__p"></div>
+  <div class="curtain__p"></div><div class="curtain__p"></div>
+  <div class="curtain__mark">
+    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17L16 7l12 10" stroke-linejoin="round"/></svg>
+  </div>
+</div>
+
+<!-- ============================ HEADER ============================ -->
+<header class="hdr">
+  <div class="hdr__in">
+    <a class="brand" href="index.html" aria-label="Modular Roofing y Pérgolas — inicio">
+      <svg class="brand__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 16.5L16 6l13 10.5" stroke-linejoin="round"/>
+        <path d="M7 20.5h18M7 25h18" stroke-width="1.4" opacity=".55"/>
+      </svg>
+      <span class="brand__txt">
+        <span class="brand__name">MODULAR</span>
+        <span class="brand__sub">Roofing &amp; Pérgolas</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Principal">
+      <a class="nav__a" href="index.html" data-en="Home">Inicio</a>
+      <a class="nav__a" href="techos.html" data-en="Roofing">Techos</a>
+      <a class="nav__a" href="pergolas.html" aria-current="page" data-en="Pergolas">Pérgolas</a>
+      <a class="nav__a" href="proyectos.html" data-en="Projects">Proyectos</a>
+      <a class="nav__a" href="nosotros.html" data-en="About">Nosotros</a>
+      <a class="nav__a" href="contacto.html" data-en="Contact">Contacto</a>
+    </nav>
+
+    <div class="hdr__side">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button class="lang__b" data-lang="es" aria-pressed="true">ES</button>
+        <button class="lang__b" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn" href="contacto.html">
+        <span data-en="Free estimate">Estimado gratis</span>
+        <svg class="btn__arrow" width="13" height="9" viewBox="0 0 13 9" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 4.5h11M7.5 1l3.5 3.5L7.5 8"/></svg>
+      </a>
+      <button class="burger" aria-expanded="false" aria-controls="sheet" aria-label="Menú" data-en-aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<div class="sheet" id="sheet" data-open="false">
+  <nav class="sheet__nav" aria-label="Móvil">
+    <a class="sheet__a" href="index.html"><span class="idx">01</span><span data-en="Home">Inicio</span></a>
+    <a class="sheet__a" href="techos.html"><span class="idx">02</span><span data-en="Roofing">Techos</span></a>
+    <a class="sheet__a" href="pergolas.html" aria-current="page"><span class="idx">03</span><span data-en="Pergolas">Pérgolas</span></a>
+    <a class="sheet__a" href="proyectos.html"><span class="idx">04</span><span data-en="Projects">Proyectos</span></a>
+    <a class="sheet__a" href="nosotros.html"><span class="idx">05</span><span data-en="About">Nosotros</span></a>
+    <a class="sheet__a" href="contacto.html"><span class="idx">06</span><span data-en="Contact">Contacto</span></a>
+  </nav>
+  <div class="sheet__foot">
+    <a class="btn btn--wa" href="https://wa.me/17867820216" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn--ghost" href="tel:+17867820216">786 782 0216</a>
+    <div class="social" style="width:100%; margin-top:.6rem">
+      <a class="social__a" href="https://www.instagram.com/modularroofing/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="social__a" href="https://www.facebook.com/1053084341213840" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.9c0-.8.2-1.2 1.4-1.2h1.5V2.8c-.3 0-1.2-.1-2.3-.1-2.4 0-4 1.4-4 4.1v1.7H8v3.1h2.6V21H14v-9.4h2.5l.4-3.1H14z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ============================ CABECERA ============================ -->
+  <section class="page-head">
+    <div class="shell page-head__in">
+      <nav class="crumbs" aria-label="Ruta">
+        <a href="index.html" data-en="Home">Inicio</a><span>/</span><span data-en="Pergolas">Pérgolas</span>
+      </nav>
+      <h1 data-reveal>
+        <span data-en="Design it in 3D.">Diséñala en 3D.</span>
+        <span class="mark" data-en="Then we build it.">Después la construimos.</span>
+      </h1>
+      <p class="lead" data-reveal style="--rv-d:120ms" data-en="Change the type, the finish, the size, and the louver angle — the model rebuilds in real time. What you see here is what shows up on your patio.">
+        Cambia el tipo, el acabado, el tamaño y el ángulo de las lamas — el modelo se reconstruye en tiempo real. Lo que ves aquí es lo que aparece en tu patio.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ CONFIGURADOR 3D ============================ -->
+  <section style="padding-bottom:var(--bay)" id="configurador">
+    <div class="shell cfg">
+
+      <div class="canvas-wrap" data-scene="config" id="cfgCanvas"
+           data-width="16" data-depth="12" data-type="louver" data-finish="blanco"
+           style="aspect-ratio:16/11; min-height:340px" data-reveal="scale">
+        <canvas></canvas>
+        <div class="canvas-wrap__grid"></div>
+        <span class="canvas-wrap__badge" data-en="Live 3D configurator">Configurador 3D en vivo</span>
+        <span class="canvas-wrap__hint">
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M7 1.5v11M1.5 7h11" opacity=".5"/><circle cx="7" cy="7" r="5.6"/></svg>
+          <span data-en="Drag to rotate · scroll to zoom">Arrastra para girar · scroll para acercar</span>
+        </span>
+        <div class="canvas-wrap__load">
+          <svg class="spinner" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M16 3a13 13 0 0 1 13 13" stroke-linecap="round"/>
+          </svg>
+          <img class="canvas-fallback" src="images/proj-pergola-louvers.jpg" alt="Pérgola de lamas orientables" data-en-alt="Louvered pergola">
+        </div>
+      </div>
+
+      <form class="cfg__panel" data-config-for="cfgCanvas" data-reveal onsubmit="return false">
+
+        <fieldset class="cfg__grp">
+          <legend data-en="Roof type">Tipo de techo</legend>
+          <div class="opts opts--3">
+            <label class="opt">
+              <input type="radio" name="type" value="louver" data-cfg="type" checked>
+              <span class="opt__b">
+                <svg class="opt__ico" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9h22M3 14h22M3 19h22" opacity=".85"/><path d="M6 6v18M22 6v18" stroke-linecap="round"/></svg>
+                <span data-en="Louvered">Lamas</span>
+              </span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="type" value="panel" data-cfg="type">
+              <span class="opt__b">
+                <svg class="opt__ico" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="8" width="22" height="6" rx="1"/><path d="M6 14v10M22 14v10" stroke-linecap="round"/></svg>
+                <span data-en="Insulated">Insulado</span>
+              </span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="type" value="decorativa" data-cfg="type">
+              <span class="opt__b">
+                <svg class="opt__ico" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 10h22M8 7v6M14 7v6M20 7v6" opacity=".85"/><path d="M6 10v14M22 10v14" stroke-linecap="round"/></svg>
+                <span data-en="Decorative">Decorativa</span>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="cfg__grp">
+          <legend data-en="Finish">Acabado</legend>
+          <div class="opts opts--4">
+            <label class="opt">
+              <input type="radio" name="finish" value="blanco" data-cfg="finish" checked>
+              <span class="opt__b"><span class="opt__sw" style="background:#E6E7E3"></span><span data-en="White">Blanco</span></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="finish" value="negro" data-cfg="finish">
+              <span class="opt__b"><span class="opt__sw" style="background:#1B1E22"></span><span data-en="Black">Negro</span></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="finish" value="bronce" data-cfg="finish">
+              <span class="opt__b"><span class="opt__sw" style="background:#53412F"></span><span data-en="Bronze">Bronce</span></span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="finish" value="madera" data-cfg="finish">
+              <span class="opt__b"><span class="opt__sw" style="background:#8A5A31"></span><span data-en="Woodgrain">Madera</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="cfg__grp">
+          <legend data-en="Dimensions">Dimensiones</legend>
+          <div class="cfg__row">
+            <span class="field__l" style="margin:0" data-en="Width">Ancho</span>
+            <span class="cfg__val" data-cfg-out="width">16 ft</span>
+          </div>
+          <input type="range" min="10" max="28" step="2" value="16" data-cfg="width"
+                 aria-label="Ancho en pies" data-en-aria-label="Width in feet">
+          <div class="cfg__row" style="margin-top:1.4rem">
+            <span class="field__l" style="margin:0" data-en="Depth">Profundidad</span>
+            <span class="cfg__val" data-cfg-out="depth">12 ft</span>
+          </div>
+          <input type="range" min="8" max="24" step="2" value="12" data-cfg="depth"
+                 aria-label="Profundidad en pies" data-en-aria-label="Depth in feet">
+        </fieldset>
+
+        <fieldset class="cfg__grp" data-open-row>
+          <legend data-en="Louver opening">Apertura de lamas</legend>
+          <div class="cfg__row">
+            <span class="field__l" style="margin:0" data-en="Closed → open">Cerrado → abierto</span>
+          </div>
+          <input type="range" min="0" max="100" value="55" data-cfg="open"
+                 aria-label="Apertura de lamas" data-en-aria-label="Louver opening">
+        </fieldset>
+
+        <div class="cfg__foot">
+          <a class="btn" href="contacto.html">
+            <span data-en="Quote this design">Cotizar este diseño</span>
+            <svg class="btn__arrow" width="13" height="9" viewBox="0 0 13 9" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 4.5h11M7.5 1l3.5 3.5L7.5 8"/></svg>
+          </a>
+          <button type="button" class="btn btn--ghost" data-cfg-reset data-en="Reset view">Reiniciar vista</button>
+          <p class="cfg__note" data-en="Real-time model for reference. Final dimensions, structure, and anchoring are confirmed during the on-site measurement.">
+            Modelo en tiempo real, de referencia. Las dimensiones finales, la estructura y el anclaje se confirman durante la medición en sitio.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================ TIPOS ============================ -->
+  <section class="bay" id="tipos" style="border-top:1px solid var(--line)">
+    <div class="shell">
+      <div class="sec-head">
+        <div>
+          <p class="tag" data-reveal data-en="The families">Las familias</p>
+          <h2 class="sec-head__title" data-reveal style="--rv-d:80ms">
+            <span data-en="Shade is not">La sombra no es</span><br>
+            <span class="outline" data-en="one single thing.">una sola cosa.</span>
+          </h2>
+        </div>
+        <p class="lead" data-reveal style="--rv-d:160ms" data-en="What you need depends on how you'll use the space: sun control, real heat blocking, or pure architecture.">
+          Lo que necesitas depende de cómo vas a usar el espacio: control del sol, bloqueo real del calor, o pura arquitectura.
+        </p>
+      </div>
+
+      <div class="grid grid--2" data-stagger="110">
+        <article class="plate svc" data-reveal>
+          <span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span>
+          <span class="idx">01</span>
+          <h3 data-en="Bioclimatic (louvered)">Bioclimática (lamas)</h3>
+          <p class="dim" data-en="Aluminum louvers that rotate with a remote. Open them for breeze, angle them for shade, close them when the rain starts. The most versatile option — and the one everyone wants once they've seen it work.">
+            Lamas de aluminio que giran con control remoto. Ábrelas para que corra el aire, inclínalas para sombra, ciérralas cuando empieza la lluvia. La opción más versátil — y la que todos quieren una vez que la ven funcionar.
+          </p>
+          <ul class="svc__l" role="list">
+            <li data-en="Motorized rotation">Rotación motorizada</li>
+            <li data-en="Closes against rain">Cierra contra la lluvia</li>
+            <li data-en="Integrated LED option">Opción de LED integrado</li>
+          </ul>
+        </article>
+
+        <article class="plate svc" data-reveal>
+          <span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span>
+          <span class="idx">02</span>
+          <h3 data-en="Insulated panel">Panel insulado</h3>
+          <p class="dim" data-en="A solid roof with an insulating core. It doesn't just block the sun — it blocks the heat coming through. If you want to actually use the patio at 2pm in August, this is the answer.">
+            Un techo sólido con núcleo aislante. No solo bloquea el sol — bloquea el calor que lo atraviesa. Si quieres usar de verdad el patio a las 2pm en agosto, esta es la respuesta.
+          </p>
+          <ul class="svc__l" role="list">
+            <li data-en="Real thermal insulation">Aislamiento térmico real</li>
+            <li data-en="100% waterproof">100% impermeable</li>
+            <li data-en="Ideal over outdoor kitchens">Ideal sobre cocinas exteriores</li>
+          </ul>
+        </article>
+
+        <article class="plate svc" data-reveal>
+          <span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span>
+          <span class="idx">03</span>
+          <h3 data-en="Decorative aluminum">Aluminio decorativo</h3>
+          <p class="dim" data-en="Open rafters, no moving parts, nothing to maintain. It defines the space and filters the light without closing it off. Available in woodgrain finish that holds up to the sun in a way real wood doesn't.">
+            Rafters abiertos, sin partes móviles, nada que mantener. Define el espacio y filtra la luz sin cerrarlo. Disponible en acabado madera que aguanta el sol como la madera real no lo hace.
+          </p>
+          <ul class="svc__l" role="list">
+            <li data-en="Zero maintenance">Cero mantenimiento</li>
+            <li data-en="Woodgrain finish available">Acabado madera disponible</li>
+            <li data-en="Most affordable">La más accesible</li>
+          </ul>
+        </article>
+
+        <article class="plate svc" data-reveal>
+          <span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span><span class="plate__corner"></span>
+          <span class="idx">04</span>
+          <h3 data-en="Outdoor kitchens">Cocinas exteriores</h3>
+          <p class="dim" data-en="A pergola is the roof; the kitchen is what makes you live under it. We build the structure and the counter together so the plumbing, the gas, and the electrical are planned from day one — not patched in later.">
+            La pérgola es el techo; la cocina es lo que hace que vivas debajo. Construimos la estructura y el mesón juntos para que la plomería, el gas y la electricidad se planeen desde el día uno — no se parchen después.
+          </p>
+          <ul class="svc__l" role="list">
+            <li data-en="Structure + counter together">Estructura + mesón juntos</li>
+            <li data-en="Utilities planned upfront">Instalaciones planeadas antes</li>
+            <li data-en="Weather-rated materials">Materiales para intemperie</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ESPECIFICACIONES ============================ -->
+  <section class="bay" style="border-block:1px solid var(--line); background:linear-gradient(180deg,var(--void),var(--graphite))">
+    <div class="shell duo duo--flip">
+      <figure class="duo__img" data-reveal="scale">
+        <img src="images/proj-pergola-lateral.jpg" alt="Detalle estructural de pérgola de aluminio" data-en-alt="Structural detail of aluminum pergola" loading="lazy">
+      </figure>
+      <div data-reveal>
+        <p class="tag tag--draft" data-en="Specifications">Especificaciones</p>
+        <h2 style="margin-top:1.4rem" data-en="Built for this climate.">Hecha para este clima.</h2>
+        <p class="lead" style="margin-top:1.4rem" data-en="Everything we install is aluminum — it doesn't rot, doesn't rust, and doesn't get eaten by termites. In South Florida that's not a preference, it's the only sane choice.">
+          Todo lo que instalamos es aluminio — no se pudre, no se oxida y no se lo comen las termitas. En el sur de la Florida eso no es una preferencia, es la única opción sensata.
+        </p>
+        <div class="spec-wrap" style="margin-top:2rem">
+          <table class="spec">
+            <tbody>
+              <tr><th data-en="Material">Material</th><td data-en="Structural extruded aluminum">Aluminio extruido estructural</td></tr>
+              <tr><th data-en="Finish">Acabado</th><td data-en="Powder coat — white, black, bronze, or woodgrain">Powder coat — blanco, negro, bronce o madera</td></tr>
+              <tr><th data-en="Wind rating">Viento</th><td data-en="Engineered for South Florida wind loads">Calculada para cargas de viento del sur de la Florida</td></tr>
+              <tr><th data-en="Anchoring">Anclaje</th><td data-en="To slab, footing, or existing structure per site conditions">A losa, zapata o estructura existente según el sitio</td></tr>
+              <tr><th data-en="Permits">Permisos</th><td data-en="Pulled by us when the municipality requires them">Los sacamos nosotros cuando el municipio los exige</td></tr>
+              <tr><th data-en="Add-ons">Adicionales</th><td data-en="LED lighting, fans, screens, motorized shades">Iluminación LED, ventiladores, mallas, cortinas motorizadas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ GALERÍA ============================ -->
+  <section class="bay">
+    <div class="shell">
+      <div class="sec-head">
+        <div>
+          <p class="tag" data-reveal data-en="Installed">Instaladas</p>
+          <h2 class="sec-head__title" data-reveal style="--rv-d:80ms" data-en="How they look for real.">Cómo se ven de verdad.</h2>
+        </div>
+        <div data-reveal style="--rv-d:160ms">
+          <a class="link" href="proyectos.html"><span data-en="See all projects">Ver todos los proyectos</span> →</a>
+        </div>
+      </div>
+      <div class="mosaic" data-stagger="90">
+        <figure class="mosaic__i mosaic__i--tall" data-reveal>
+          <img src="images/proj-pergola-bioclimatica.jpg" alt="Pérgola bioclimática" data-en-alt="Bioclimatic pergola" loading="lazy">
+          <figcaption><span class="idx">01</span><span data-en="Bioclimatic">Bioclimática</span></figcaption>
+        </figure>
+        <figure class="mosaic__i" data-reveal>
+          <img src="images/proj-pergola-patio.jpg" alt="Pérgola sobre patio" data-en-alt="Pergola over patio" loading="lazy">
+          <figcaption><span class="idx">02</span><span data-en="Insulated panel">Panel insulado</span></figcaption>
+        </figure>
+        <figure class="mosaic__i" data-reveal>
+          <img src="images/proj-pergola-jardin.jpg" alt="Pérgola en jardín" data-en-alt="Garden pergola" loading="lazy">
+          <figcaption><span class="idx">03</span><span data-en="Decorative">Decorativa</span></figcaption>
+        </figure>
+        <figure class="mosaic__i mosaic__i--wide" data-reveal>
+          <img src="images/proj-lounge-noche.jpg" alt="Pérgola con cocina exterior de noche" data-en-alt="Pergola with outdoor kitchen at night" loading="lazy">
+          <figcaption><span class="idx">04</span><span data-en="Pergola + outdoor kitchen">Pérgola + cocina exterior</span></figcaption>
+        </figure>
+      </div>
+      <p class="note" data-reveal data-en="Reference images. We're loading photos of our own completed projects.">
+        Imágenes de referencia. Estamos cargando fotos de nuestros propios proyectos terminados.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================ CTA ============================ -->
+  <section class="cta">
+    <div class="shell cta__in">
+      <p class="tag" data-reveal data-en="Next step">Siguiente paso</p>
+      <h2 class="cta__h" data-reveal style="--rv-d:80ms">
+        <span class="rise"><span data-en="You designed it.">Ya la diseñaste.</span></span>
+        <span class="rise"><span class="mark" data-en="Now let's price it.">Ahora pongámosle precio.</span></span>
+      </h2>
+      <p class="lead" data-reveal style="--rv-d:180ms; margin-inline:auto" data-en="Send us your configuration and we'll come measure. Free estimate, financing available.">
+        Mándanos tu configuración y vamos a medir. Estimado gratis, financiamiento disponible.
+      </p>
+      <div class="cta__btns" data-reveal style="--rv-d:260ms">
+        <a class="btn" href="contacto.html">
+          <span data-en="Request estimate">Solicitar estimado</span>
+          <svg class="btn__arrow" width="13" height="9" viewBox="0 0 13 9" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 4.5h11M7.5 1l3.5 3.5L7.5 8"/></svg>
+        </a>
+        <a class="btn btn--wa" href="https://wa.me/17867820216" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="ftr">
+  <div class="shell">
+    <div class="ftr__top">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand__glyph" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 16.5L16 6l13 10.5" stroke-linejoin="round"/>
+            <path d="M7 20.5h18M7 25h18" stroke-width="1.4" opacity=".55"/>
+          </svg>
+          <span class="brand__txt">
+            <span class="brand__name">MODULAR</span>
+            <span class="brand__sub">Roofing &amp; Pérgolas</span>
+          </span>
+        </a>
+        <p class="dim" style="margin-top:1.6rem; max-width:34ch" data-en="Roofing and custom pergolas across South Florida. Licensed, insured, and hurricane-rated.">
+          Techos y pérgolas a medida en el sur de la Florida. Licenciados, asegurados y anti-huracán.
+        </p>
+        <div class="social" style="margin-top:1.8rem">
+          <a class="social__a" href="https://www.instagram.com/modularroofing/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="social__a" href="https://www.facebook.com/1053084341213840" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.9c0-.8.2-1.2 1.4-1.2h1.5V2.8c-.3 0-1.2-.1-2.3-.1-2.4 0-4 1.4-4 4.1v1.7H8v3.1h2.6V21H14v-9.4h2.5l.4-3.1H14z"/></svg>
+          </a>
+          <a class="social__a social__a--wa" href="https://wa.me/17867820216" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-6.9 12l-1 3.9L4.1 15A8 8 0 1 0 8 0zm4.6 11.3c-.2.6-1.1 1-1.5 1-.4.1-.9.1-1.5-.1a12 12 0 0 1-4.8-4.3C4.2 7 4 6.2 4 5.6c0-.6.3-1 .5-1.2.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .5.4l.6 1.5c.1.1.1.3 0 .4l-.2.4-.3.3c-.1.1-.2.2-.1.4.2.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2 0 .3 0 .4-.1l.7-.8c.1-.2.3-.1.4-.1l1.5.7c.2.1.3.2.4.3v.9z"/></svg>
+          </a>
+          <a class="social__a" href="tel:+17867820216" aria-label="Teléfono" data-en-aria-label="Phone">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3.5C2 2.7 2.7 2 3.5 2h1.7c.6 0 1.1.4 1.3 1l.6 2.2c.1.5 0 1-.4 1.3l-1 .8a9 9 0 0 0 3.9 3.9l.8-1c.3-.4.8-.5 1.3-.4l2.2.6c.6.2 1 .7 1 1.3v1.7c0 .8-.7 1.5-1.5 1.5A12.5 12.5 0 0 1 2 3.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="ftr__h" data-en="Services">Servicios</h3>
+        <div class="ftr__l">
+          <a href="techos.html" data-en="Roof replacement">Reemplazo de techo</a>
+          <a href="techos.html#inspeccion" data-en="Inspection &amp; repair">Inspección y reparación</a>
+          <a href="pergolas.html" data-en="Custom pergolas">Pérgolas a medida</a>
+          <a href="pergolas.html#tipos" data-en="Outdoor kitchens">Cocinas exteriores</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="ftr__h" data-en="Company">Empresa</h3>
+        <div class="ftr__l">
+          <a href="nosotros.html" data-en="About us">Nosotros</a>
+          <a href="proyectos.html" data-en="Projects">Proyectos</a>
+          <a href="index.html#faq">FAQ</a>
+          <a href="contacto.html" data-en="Contact">Contacto</a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="ftr__h" data-en="Get in touch">Contacto</h3>
+        <div class="ftr__l">
+          <a href="tel:+17867820216">(786) 782-0216</a>
+          <a href="https://wa.me/17867820216" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://www.instagram.com/modularroofing/" target="_blank" rel="noopener">@modularroofing</a>
+          <span>19591 NE 10th Ave, Bldg 3 — Bay B<br>North Miami Beach, FL 33179</span>
+          <span data-en="Mon – Fri · 9AM – 5PM">Lun – Vie · 9AM – 5PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ftr__bot">
+      <span>© <span id="yr">2026</span> Modular Roofing &amp; Pérgolas</span>
+      <nav class="ftr__legal" aria-label="Legal">
+        <a href="privacidad.html" data-en="Privacy Policy">Política de Privacidad</a>
+        <a href="terminos.html" data-en="Terms of Use">Términos de Uso</a>
+        <a href="terminos.html#t11" data-en="Accessibility">Accesibilidad</a>
+      </nav>
+      <span data-en="Licensed &amp; insured · Miami-Dade code compliant">Licenciados y asegurados · Cumple código Miami-Dade</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Barra de acción móvil -->
+<nav class="dock" data-show="false" aria-label="Acciones rápidas">
+  <a class="dock__b" href="tel:+17867820216">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 3.5C2 2.7 2.7 2 3.5 2h1.7c.6 0 1.1.4 1.3 1l.6 2.2c.1.5 0 1-.4 1.3l-1 .8a9 9 0 0 0 3.9 3.9l.8-1c.3-.4.8-.5 1.3-.4l2.2.6c.6.2 1 .7 1 1.3v1.7c0 .8-.7 1.5-1.5 1.5A12.5 12.5 0 0 1 2 3.5z"/></svg>
+    <span data-en="Call">Llamar</span>
+  </a>
+  <a class="dock__b dock__b--wa" href="https://wa.me/17867820216" target="_blank" rel="noopener">
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-6.9 12l-1 3.9L4.1 15A8 8 0 1 0 8 0zm4.6 11.3c-.2.6-1.1 1-1.5 1-.4.1-.9.1-1.5-.1a12 12 0 0 1-4.8-4.3C4.2 7 4 6.2 4 5.6c0-.6.3-1 .5-1.2.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .5.4l.6 1.5c.1.1.1.3 0 .4l-.2.4-.3.3c-.1.1-.2.2-.1.4.2.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2 0 .3 0 .4-.1l.7-.8c.1-.2.3-.1.4-.1l1.5.7c.2.1.3.2.4.3v.9z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+</nav>
+
+<a class="wa-fab" href="https://wa.me/17867820216" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" data-en-aria-label="Message us on WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 0 0-6.9 12l-1 3.9L4.1 15A8 8 0 1 0 8 0zm4.6 11.3c-.2.6-1.1 1-1.5 1-.4.1-.9.1-1.5-.1a12 12 0 0 1-4.8-4.3C4.2 7 4 6.2 4 5.6c0-.6.3-1 .5-1.2.2-.2.4-.3.6-.3h.4c.2 0 .3 0 .5.4l.6 1.5c.1.1.1.3 0 .4l-.2.4-.3.3c-.1.1-.2.2-.1.4.2.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2 0 .3 0 .4-.1l.7-.8c.1-.2.3-.1.4-.1l1.5.7c.2.1.3.2.4.3v.9z"/></svg>
+</a>
+
+<!-- Aviso de cookies / recursos externos -->
+<aside class="cookie" data-cookie data-show="false" role="region" aria-label="Aviso de privacidad" data-en-aria-label="Privacy notice">
+  <p class="cookie__t" data-en="Privacy notice">Aviso de privacidad</p>
+  <p data-en="This site sets no advertising or analytics cookies. It stores only your language preference, and loads fonts and the 3D library from external providers, which receive your IP address. See our <a href=&quot;privacidad.html&quot;>Privacy Policy</a>.">
+    Este sitio no usa cookies de publicidad ni de analítica. Solo guarda tu preferencia de idioma, y carga las tipografías y la librería 3D desde proveedores externos, que reciben tu dirección IP. Consulta nuestra <a href="privacidad.html">Política de Privacidad</a>.
+  </p>
+  <div class="cookie__btns">
+    <button class="btn" data-cookie-ok data-en="Got it">Entendido</button>
+    <a class="btn btn--ghost" href="privacidad.html" data-en="Read policy">Leer política</a>
+  </div>
+</aside>
+
+<script src="assets/site.js"></script>
+<script type="module" src="assets/three-scenes.js"></script>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
