@@ -499,20 +499,32 @@ h3 { font-size: var(--t-h3); letter-spacing: -.02em; line-height: 1.12; }
   mask-image: radial-gradient(circle at 50% 55%, #000, transparent 72%);
   opacity: .3;
 }
+/* Sobre un render con fondo variable, las etiquetas necesitan su propio
+   contraste: fondo translúcido en vez de confiar en el color del lienzo. */
 .canvas-wrap__hint {
-  position: absolute; left: 14px; bottom: 12px;
+  position: absolute; left: 12px; bottom: 11px;
   font-family: var(--mono); font-size: .62rem; letter-spacing: .16em;
-  text-transform: uppercase; color: var(--ash-dim);
+  text-transform: uppercase; color: var(--chalk);
   display: flex; align-items: center; gap: .55em;
   pointer-events: none;
+  padding: .42em .7em; border-radius: 2px;
+  background: rgba(7,9,11,.55);
+  backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255,255,255,.09);
   transition: opacity .5s;
 }
 .canvas-wrap__badge {
-  position: absolute; right: 14px; top: 12px;
+  position: absolute; right: 12px; top: 11px;
   font-family: var(--mono); font-size: .6rem; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--draft);
-  border: 1px solid var(--draft-dim); border-radius: 2px;
-  padding: .32em .6em; pointer-events: none;
+  text-transform: uppercase; color: var(--ember);
+  border: 1px solid rgba(242,179,122,.4); border-radius: 2px;
+  padding: .38em .66em; pointer-events: none;
+  background: rgba(7,9,11,.55);
+  backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
+}
+/* En el configurador (estudio neutro) la insignia vuelve al azul de plano */
+.canvas-wrap[data-scene="config"] .canvas-wrap__badge {
+  color: var(--draft); border-color: var(--draft-dim);
 }
 /* estado de carga del 3D */
 .canvas-wrap__load {
