@@ -170,23 +170,22 @@
         </div>
       </div>
 
-      <!-- Modelo 3D -->
+      <!-- Imagen principal -->
       <div class="hero__stage" data-reveal="scale" style="--rv-d:250ms">
-        <div class="canvas-wrap" data-scene="hero" style="aspect-ratio:1/1">
-          <canvas></canvas>
-          <div class="canvas-wrap__grid"></div>
-          <span class="canvas-wrap__badge" data-en="3D model · Live">Modelo 3D · Live</span>
-          <span class="canvas-wrap__hint">
-            <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M7 1.5v11M1.5 7h11" opacity=".5"/><circle cx="7" cy="7" r="5.6"/></svg>
-            <span data-en="Drag to rotate">Arrastra para girar</span>
-          </span>
-          <div class="canvas-wrap__load">
-            <svg class="spinner" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M16 3a13 13 0 0 1 13 13" stroke-linecap="round"/>
-            </svg>
-            <img class="canvas-fallback" src="images/proj-pergola-bioclimatica.jpg" alt="Pérgola bioclimática de aluminio" data-en-alt="Aluminum bioclimatic pergola">
+        <figure class="hero__shot">
+          <div class="hero__shot-frame">
+            <img src="images/proj-pergola-bioclimatica.jpg"
+                 alt="Pérgola bioclimática de aluminio negro con lamas orientables, iluminación LED integrada y cocina exterior junto a la piscina"
+                 data-en-alt="Black aluminum bioclimatic pergola with adjustable louvers, integrated LED lighting and an outdoor kitchen beside the pool"
+                 width="1472" height="1104" fetchpriority="high" decoding="async">
+            <span class="hero__shot-corner"></span><span class="hero__shot-corner"></span>
+            <span class="hero__shot-corner"></span><span class="hero__shot-corner"></span>
           </div>
-        </div>
+          <figcaption class="hero__shot-cap">
+            <span class="idx">01</span>
+            <span data-en="Bioclimatic pergola · Louvered roof · Integrated LED">Pérgola bioclimática · Techo de lamas · LED integrado</span>
+          </figcaption>
+        </figure>
         <ul class="hero__specs" role="list" data-stagger="70">
           <li data-reveal><span class="idx">01</span><span data-en="Louvered">Lamas orientables</span></li>
           <li data-reveal><span class="idx">02</span><span data-en="Insulated panel">Panel insulado</span></li>
@@ -782,7 +781,23 @@
 </aside>
 
 <script src="assets/site.js"></script>
-<script type="module" src="assets/three-scenes.js"></script>
-<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script>
+  // Three.js pesa ~600 KB: solo se carga en las páginas que tienen un lienzo 3D.
+  // El router intercambia <main>, así que también comprobamos tras cada navegación.
+  (() => {
+    let loaded = false;
+    const maybeLoad = () => {
+      if (loaded || !document.querySelector("[data-scene]")) return;
+      loaded = true;
+      const s = document.createElement("script");
+      s.type = "module";
+      s.src = "assets/three-scenes.js";
+      document.body.appendChild(s);
+    };
+    document.addEventListener("mrp:page", maybeLoad);
+    maybeLoad();
+  })();
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

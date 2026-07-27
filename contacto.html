@@ -483,7 +483,23 @@
 </aside>
 
 <script src="assets/site.js"></script>
-<script type="module" src="assets/three-scenes.js"></script>
-<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script>
+  // Three.js pesa ~600 KB: solo se carga en las páginas que tienen un lienzo 3D.
+  // El router intercambia <main>, así que también comprobamos tras cada navegación.
+  (() => {
+    let loaded = false;
+    const maybeLoad = () => {
+      if (loaded || !document.querySelector("[data-scene]")) return;
+      loaded = true;
+      const s = document.createElement("script");
+      s.type = "module";
+      s.src = "assets/three-scenes.js";
+      document.body.appendChild(s);
+    };
+    document.addEventListener("mrp:page", maybeLoad);
+    maybeLoad();
+  })();
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

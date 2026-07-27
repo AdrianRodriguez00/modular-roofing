@@ -40,7 +40,7 @@ en vez del look genérico de contratista.
 ## Arquitectura
 
 ```
-index.html          Portada (héroe 3D, servicios, capas de techo, proceso,
+index.html          Portada (héroe con foto, servicios, capas de techo, proceso,
                     proyectos, cifras, dueña, zona, FAQ, tarjeta de estimado)
 techos.html         4 sistemas de techo, señales de alerta, inspección/seguro,
                     comparador antes-después
@@ -73,22 +73,23 @@ se sobrescriben.
 ### Modelado 3D en tiempo real (Three.js)
 Todo se genera por código, sin archivos `.glb`:
 
-- **Héroe** (`index.html`): **render de patio completo al atardecer** — la
-  pérgola instalada sobre un deck de losas, con piscina (agua animada por
-  cáusticas), casa al fondo con puerta corrediza iluminada, palmeras,
-  jardineras, sofás y tumbonas. Cielo de degradado cálido, sol bajo desde la
-  izquierda y luz LED bajo la pérgola. Las lamas se abren en onda recorriendo
-  el techo. Todas las texturas (losas, estuco, agua, cielo) se dibujan en
-  `<canvas>` por código — cero imágenes.
+- **Héroe** (`index.html`): **fotografía real**, no 3D. Se probó un render de
+  patio generado por código y se descartó: a esa escala el estilo low-poly
+  se lee como videojuego, no como obra terminada, y el héroe es justo donde
+  hay que demostrar acabado. La foto lleva marcas de esquina en cobre, viñeta
+  para fundirse con el fondo grafito y un desplazamiento lento tipo Ken Burns.
+  El render de patio vive en el historial de git (commit `00a14f1`) por si
+  alguna vez se quiere retomar con modelos de mayor calidad.
 - **Configurador** (`pergolas.html`): el usuario cambia **tipo** (lamas /
   panel insulado / decorativa), **acabado** (blanco / negro / bronce / madera),
   **ancho** (10–28 ft), **profundidad** (8–24 ft) y **apertura de lamas**. El
   modelo se reconstruye en vivo y la cámara se reencuadra sola según el tamaño.
-- Acotaciones en cobre alrededor del modelo, **solo en el configurador**: ahí el
-  objetivo es evaluar el producto, así que va sobre fondo de estudio neutro. El
-  héroe vende el resultado, el configurador vende la decisión.
-- Dos entornos en `createScene`: `env: "patio"` (cielo, sol de atardecer,
-  exposición 0.82) y estudio neutro por defecto.
+- Acotaciones en cobre alrededor del modelo, sobre fondo de estudio neutro: el
+  héroe vende el resultado (foto), el configurador vende la decisión (3D).
+- **Three.js solo se descarga en las páginas con lienzo 3D.** Un cargador
+  diminuto en el pie de `index.html` comprueba si existe `[data-scene]` — al
+  cargar y tras cada navegación del router — y solo entonces inyecta el módulo.
+  La portada y las otras seis páginas se ahorran ~600 KB.
 - Pausa el render cuando el lienzo no está a la vista; libera el contexto WebGL
   al navegar; cae a una foto si no hay WebGL.
 

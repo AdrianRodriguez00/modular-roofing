@@ -37,6 +37,76 @@
 .hero__cta { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2.2rem; }
 
 .hero__stage { position: relative; }
+
+/* ---------- Foto principal del héroe ---------- */
+/* La figura NO recorta: así el pie puede salirse del encuadre en móvil.
+   Quien recorta es el marco interior. */
+.hero__shot { position: relative; margin: 0; }
+.hero__shot-frame {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--void);
+  aspect-ratio: 4 / 3;
+  isolation: isolate;
+}
+.hero__shot img {
+  width: 100%; height: 100%; object-fit: cover;
+  /* la foto se integra a la paleta: algo más fría y contrastada */
+  filter: saturate(.88) contrast(1.07) brightness(.94);
+  transform: scale(1.04);
+  animation: shot-drift 26s ease-in-out infinite alternate;
+}
+@keyframes shot-drift {
+  from { transform: scale(1.04) translate3d(0, 0, 0); }
+  to   { transform: scale(1.11) translate3d(-1.4%, -1.1%, 0); }
+}
+/* viñeta: funde la foto con el fondo grafito de la página */
+.hero__shot-frame::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(7,9,11,.72) 0%, transparent 42%),
+    radial-gradient(120% 90% at 50% 40%, transparent 52%, rgba(7,9,11,.5) 100%);
+}
+/* marcas de esquina, mismo lenguaje de plano que las tarjetas */
+.hero__shot-corner {
+  position: absolute; width: 15px; height: 15px; z-index: 2;
+  border: 1px solid var(--copper); opacity: .6;
+}
+.hero__shot-corner:nth-of-type(1) { top: 12px; left: 12px; border-right: 0; border-bottom: 0; }
+.hero__shot-corner:nth-of-type(2) { top: 12px; right: 12px; border-left: 0; border-bottom: 0; }
+.hero__shot-corner:nth-of-type(3) { bottom: 12px; left: 12px; border-right: 0; border-top: 0; }
+.hero__shot-corner:nth-of-type(4) { bottom: 12px; right: 12px; border-left: 0; border-top: 0; }
+
+.hero__shot-cap {
+  display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap;
+  font-family: var(--mono); font-size: var(--t-micro);
+  letter-spacing: .15em; text-transform: uppercase; color: var(--ash);
+  line-height: 1.6;
+}
+.hero__shot-cap .idx { color: var(--copper); }
+
+/* En pantallas anchas el pie va sobre la foto; en móvil se sale del
+   encuadre para no chocar con las marcas de esquina al partirse en
+   dos líneas. */
+@media (min-width: 560px) {
+  .hero__shot-cap {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+    padding: 2.2rem 1.5rem 1.2rem;
+  }
+}
+@media (max-width: 559px) {
+  .hero__shot-frame { aspect-ratio: 5 / 4; }
+  .hero__shot-cap { margin-top: .95rem; padding-left: .1rem; }
+  .hero__shot-frame::after {
+    background: radial-gradient(120% 90% at 50% 40%, transparent 58%, rgba(7,9,11,.42) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__shot img { animation: none; transform: scale(1.02); }
+}
 .hero__specs {
   display: flex; flex-wrap: wrap; gap: .5rem 1.6rem;
   margin-top: 1.4rem; padding: 0; list-style: none;
